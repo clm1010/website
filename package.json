@@ -16,7 +16,9 @@
     "bootstrap": "4.6.0",
     "bootstrap-vue": "2.21.2",
     "core-js": "3.9.1",
-    "nuxt": "2.15.3"
+    "nuxt": "2.15.3",
+    "swiper": "3.4.2",
+    "vue-awesome-swiper": "4.1.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "6.0.0",

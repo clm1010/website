@@ -15,8 +15,12 @@ module.exports = {
   plugins: [],
   // add your custom rules here
   rules: {
+    'prettier/prettier': 'off',
     'nuxt/no-cjs-in-config': 'off',
+    'no-lonely-if': 0,
+    'require-await': 0,
+    'dot-notation': 0,
     'no-console': 0,
-    'prettier/prettier': 'off'
+    'vue/attributes-order': 0
   }
 }
