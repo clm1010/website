@@ -1,7 +1,11 @@
 <template>
-  <header>
-    <Nav />
-  </header>
+  <div class="header-main">
+    <b-container>
+      <header>
+        <Nav />
+      </header>
+    </b-container>
+  </div>
 </template>
 
 <script>
@@ -17,4 +21,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.header-main {
+  position: fixed;
+  width: 100%;
+  height: 102px;
+  box-shadow: 0 0 10px #ccc;
+  background-color: #fff;
+  z-index: 999;
+}
+</style>

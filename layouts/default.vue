@@ -1,8 +1,6 @@
 <template>
   <div>
-    <b-container>
-      <my-header />
-    </b-container>
+    <my-header />
     <Carousel />
     <b-container>
       <Nuxt />
