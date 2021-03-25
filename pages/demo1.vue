@@ -113,7 +113,7 @@
 
 <script>
 export default {
-  name: 'Index',
+  name: 'Demo1',
   components: {}
 }
 </script>

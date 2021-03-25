@@ -23,11 +23,15 @@ export default {
 
 <style lang="scss" scoped>
 .header-main {
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: 100%;
-  height: 102px;
+  height: 6.375rem;
   box-shadow: 0 0 10px #ccc;
   background-color: #fff;
   z-index: 999;
+  .container {
+    padding: 0;
+  }
 }
 </style>

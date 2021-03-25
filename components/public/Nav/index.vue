@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" fixed-top>
+  <b-navbar toggleable="lg" type="dark">
     <nuxt-link to="/" class="navbar-brand"
       ><img src="@/assets/images/logo.jpg" alt="" srcset=""
     /></nuxt-link>
@@ -9,13 +9,15 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item href="#">首页</b-nav-item>
-        <b-nav-item href="#" disabled>Disabled</b-nav-item>
+        <nuxt-link to="/Home">首页</nuxt-link>
+        <!-- <b-nav-item href="Home"></b-nav-item> -->
+        <!-- <b-nav-item href="Demo1">Disabled</b-nav-item> -->
+        <nuxt-link to="/Demo1">Disabled</nuxt-link>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-nav-form>
+        <!-- <b-nav-form>
           <b-form-input
             size="sm"
             class="mr-sm-2"
@@ -24,7 +26,7 @@
           <b-button size="sm" class="my-2 my-sm-0" type="submit"
             >Search</b-button
           >
-        </b-nav-form>
+        </b-nav-form> -->
 
         <b-nav-item-dropdown text="Lang" right>
           <b-dropdown-item href="#">EN</b-dropdown-item>
@@ -57,10 +59,24 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  padding: 0.2rem;
+  padding: 0;
   .navbar-nav {
     .nav-link {
       color: $color-555555;
+    }
+  }
+  .navbar-brand {
+    padding-top: 0;
+  }
+  .navbar-toggler {
+    background-color: rgba(140, 140, 140, 0.6);
+  }
+  .navbar-collapse {
+    background-color: $color-FFFFFF;
+    .navbar-nav {
+      li {
+        padding: 0 0.625rem;
+      }
     }
   }
 }
