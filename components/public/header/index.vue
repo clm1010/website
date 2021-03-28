@@ -1,11 +1,9 @@
 <template>
-  <div class="header-main">
-    <b-container>
-      <header>
-        <Nav />
-      </header>
+  <header class="header-main">
+    <b-container fluid="xl">
+      <Nav />
     </b-container>
-  </div>
+  </header>
 </template>
 
 <script>

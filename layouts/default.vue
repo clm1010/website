@@ -2,12 +2,10 @@
   <div>
     <my-header />
     <Carousel />
-    <b-container>
+    <b-container fluid="xl">
       <Nuxt />
     </b-container>
-    <b-container>
-      <my-footer />
-    </b-container>
+    <my-footer />
   </div>
 </template>
 <script>
