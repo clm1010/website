@@ -8,11 +8,12 @@
           :key="index"
           class="col-sm-1-3 col-sm-1-5 col-md-1-5 col-lg-1-5"
         >
-          <b-card :img-src="item.imgUrl" img-alt="Image" img-top align="center">
-            <b-card-text>
-              {{ item.text }}
-            </b-card-text>
-          </b-card>
+          <dl>
+            <dt>
+              <img :src="item.imgUrl" alt="Image" />
+            </dt>
+            <dd>{{ item.text }}</dd>
+          </dl>
         </nuxt-link>
       </template>
     </b-row>
@@ -66,10 +67,34 @@ export default {
   }
   a {
     &:hover {
-      .card-body {
+      dl {
         background-color: $color-Brand;
         color: $color-FFFFFF;
       }
+    }
+  }
+  dl {
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    dt {
+      width: 100%;
+      max-height: 12.5rem;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        transition: all 1s;
+        &:hover {
+          transform: scale(1.4);
+        }
+      }
+    }
+    dd {
+      text-align: center;
+      padding: 0.8rem 0;
     }
   }
   // .col-xs-1-5,

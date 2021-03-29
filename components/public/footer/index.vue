@@ -1,5 +1,6 @@
 <template>
   <footer class="footer-main">
+    <div class="line"></div>
     <b-container fluid="xl" class="links">
       <b-row>
         <b-col cols="4" sm="4" md="4" lg="2" xl="2">
@@ -68,8 +69,15 @@ export default {
 
 <style lang="scss" scoped>
 footer.footer-main {
+  .line {
+    background: $color-0093d4;
+    padding: 2rem 0;
+    color: #fff;
+  }
   .links {
     font-size: 14px;
+    margin-top: 1.875rem;
+    margin-bottom: 3.125rem;
   }
   .copyright {
     border-top: 1px solid $color-e8e8e8;
