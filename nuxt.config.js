@@ -1,5 +1,5 @@
 export default {
-  mode: 'universal',
+  // mode: 'universal',
   server: {
     port: 8089, // default: 3000
     host: '0.0.0.0', // default: localhost,
@@ -21,10 +21,12 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['swiper/dist/css/swiper.css', '@/assets/css/common.scss'],
+  // css: ['swiper/dist/css/swiper.css', '@/assets/css/common.scss'],
+  css: ['@/assets/css/common.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '@/plugins/vue-swiper', ssr: false }],
+  // plugins: [{ src: '@/plugins/vue-swiper', ssr: false }],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

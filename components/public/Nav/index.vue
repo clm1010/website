@@ -11,17 +11,32 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="ml-auto">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <nuxt-link class="nav-link" to="/">首页</nuxt-link>
         </li>
         <li class="nav-item">
-          <nuxt-link class="nav-link" to="/about">公司简介</nuxt-link>
+          <nuxt-link class="nav-link" to="/about"
+            >公司简介
+            <b-nav-item-dropdown text="Lang" right>
+              <b-dropdown-item href="#">EN</b-dropdown-item>
+              <b-dropdown-item href="#">ES</b-dropdown-item>
+              <b-dropdown-item href="#">RU</b-dropdown-item>
+              <b-dropdown-item href="#">FA</b-dropdown-item>
+            </b-nav-item-dropdown>
+          </nuxt-link>
         </li>
         <li class="nav-item">
           <nuxt-link class="nav-link" to="/products">产品中心</nuxt-link>
-        </li>
-        <!-- <b-nav-item href="/Home">首页</b-nav-item>
-        <b-nav-item href="/about">Disabled</b-nav-item> -->
+        </li> -->
+        <b-nav-item to="/">首页</b-nav-item>
+        <b-nav-item-dropdown text="公司简介" right>
+          <b-dropdown-item to="/about">公司简介</b-dropdown-item>
+          <b-dropdown-item to="#">新闻资讯</b-dropdown-item>
+        </b-nav-item-dropdown>
+        <b-nav-item-dropdown text="产品中心" right>
+          <b-dropdown-item to="/products">产品中心</b-dropdown-item>
+          <b-dropdown-item href="#">Settings</b-dropdown-item>
+        </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -42,6 +57,9 @@ export default {
   .navbar-nav {
     .nav-link {
       color: $color-555555;
+      .nav-item {
+        border: 1px solid red;
+      }
     }
   }
   .navbar-brand {
