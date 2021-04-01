@@ -28,7 +28,7 @@ export default {
   box-shadow: 0 0 10px #ccc;
   background-color: #fff;
   z-index: 999;
-  .container {
+  .container-xl {
     padding: 0;
   }
 }

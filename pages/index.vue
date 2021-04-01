@@ -1,5 +1,5 @@
 <template>
-  <div class="page-index">
+  <b-container fluid="xl">
     <h2>应用领域</h2>
     <b-row class="index-content">
       <template v-for="(item, index) in appField">
@@ -17,7 +17,7 @@
         </nuxt-link>
       </template>
     </b-row>
-  </div>
+  </b-container>
 </template>
 
 <script>
@@ -59,9 +59,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-index {
+.container-xl {
   margin: 1.875rem auto 5rem auto;
-  padding: 0;
   h2 {
     text-align: center;
   }

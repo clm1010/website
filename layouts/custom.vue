@@ -1,7 +1,7 @@
 <template>
   <div>
-    <my-header />
-    <Carousel />
+    <!-- <my-header /> -->
+    <!-- <Carousel /> -->
     <!-- <b-container fluid>
      
     </b-container> -->
@@ -10,15 +10,15 @@
   </div>
 </template>
 <script>
-import MyHeader from '@/components/public/header/index'
+// import MyHeader from '@/components/public/header/index'
 import MyFooter from '@/components/public/footer/index'
-import Carousel from '@/components/Carousel'
+// import Carousel from '@/components/Carousel'
 export default {
-  name: 'Default',
+  name: 'Custom',
   components: {
-    MyHeader,
-    MyFooter,
-    Carousel
+    // MyHeader,
+    MyFooter
+    // Carousel
   },
   data() {
     return {
