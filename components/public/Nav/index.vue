@@ -8,26 +8,34 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav class="ml-auto">
-        <b-nav-item to="/">首页</b-nav-item>
+        <li class="nav-item">
+          <nuxt-link class="nav-link" to="/">首页</nuxt-link>
+        </li>
         <b-nav-item-dropdown ref="dropdown" text="公司简介" right>
-          <b-dropdown-item to="/about">公司简介</b-dropdown-item>
-          <b-dropdown-item to="#">新闻资讯</b-dropdown-item>
+          <li>
+            <nuxt-link class="dropdown-item" to="/about">公司简介</nuxt-link>
+            <nuxt-link class="dropdown-item" to="/about">新闻资讯</nuxt-link>
+          </li>
         </b-nav-item-dropdown>
-        <b-nav-item-dropdown text="产品中心" right>
-          <b-dropdown-item to="/products">产品中心</b-dropdown-item>
-          <b-dropdown-item to="/">移动数据终端</b-dropdown-item>
-          <b-dropdown-item to="/">固定式扫描器</b-dropdown-item>
-          <b-dropdown-item to="/">扫码引擎</b-dropdown-item>
-          <b-dropdown-item to="/">手持扫描枪</b-dropdown-item>
+        <b-nav-item-dropdown ref="dropdown" text="产品中心" right>
+          <li>
+            <nuxt-link class="dropdown-item" to="/products">产品中心</nuxt-link>
+            <nuxt-link class="dropdown-item" to="/">移动数据终端</nuxt-link>
+            <nuxt-link class="dropdown-item" to="/">固定式扫描器</nuxt-link>
+            <nuxt-link class="dropdown-item" to="/">扫码引擎</nuxt-link>
+            <nuxt-link class="dropdown-item" to="/">手持扫描枪</nuxt-link>
+          </li>
         </b-nav-item-dropdown>
-        <b-nav-item-dropdown text="应用领域" right>
-          <b-dropdown-item to="/products">物流仓储</b-dropdown-item>
-          <b-dropdown-item to="/">医疗</b-dropdown-item>
-          <b-dropdown-item to="/">公共事业</b-dropdown-item>
-          <b-dropdown-item to="/">零售</b-dropdown-item>
+        <b-nav-item-dropdown ref="dropdown" text="应用领域" right>
+          <li>
+            <nuxt-link class="dropdown-item" to="/products">物流仓储</nuxt-link>
+            <nuxt-link class="dropdown-item" to="/">医疗</nuxt-link>
+            <nuxt-link class="dropdown-item" to="/">公共事业</nuxt-link>
+            <nuxt-link class="dropdown-item" to="/">零售</nuxt-link>
+          </li>
         </b-nav-item-dropdown>
-        <b-nav-item to="/">服务与支持</b-nav-item>
-        <b-nav-item to="/">联系我们</b-nav-item>
+        <nuxt-link class="nav-link" to="/">服务与支持</nuxt-link>
+        <nuxt-link class="nav-link" to="/">联系我们</nuxt-link>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
