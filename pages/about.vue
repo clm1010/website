@@ -121,6 +121,5 @@ export default {
 <style lang="scss" scoped>
 .page-index {
   padding: 0;
-  border: 1px solid red;
 }
 </style>

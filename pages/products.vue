@@ -1,32 +1,35 @@
 <template>
-  <b-container fluid-xl>
-    <b-tabs pills align="center">
-      <b-tab title="移动数据终端" active>
-        <h3>移动数据终端</h3>
-        <p>213123123</p>
-      </b-tab>
-      <b-tab title="固定式扫描器"
-        ><b-card-text>Tab contents 2</b-card-text></b-tab
-      >
-      <b-tab title="扫码引擎"><b-card-text>Tab contents 2</b-card-text></b-tab>
-      <b-tab title="手持扫描枪"
-        ><b-card-text>Tab contents 2</b-card-text></b-tab
-      >
-    </b-tabs>
+  <b-container fluid class="product-main">
+    <product-category :product-category-list="prodList"></product-category>
+    <nuxt-child></nuxt-child>
   </b-container>
 </template>
 
 <script>
+import ProductCategory from '@/components/Product/productCategory'
 export default {
   name: 'Products',
-  components: {},
-  layout: 'custom_layout'
+  components: {
+    ProductCategory
+  },
+  layout: 'custom',
+  async asyncData({ app, store }) {
+    const productCategoryList = store.state.category.productCategoryList
+    // console.log(productCategoryList)
+    return {
+      prodList: productCategoryList || []
+    }
+  },
+  data() {
+    return {
+      prodList: []
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.container-fluid {
-  // padding: 0;
-  border: 1px solid red;
+.product-main {
+  padding: 0;
 }
 </style>

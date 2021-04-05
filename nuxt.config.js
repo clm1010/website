@@ -43,6 +43,7 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources'
@@ -56,7 +57,20 @@ export default {
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    proxy: true, // 表示开启代理
+    prefix: '/api', // 表示给请求url加个前缀 /api
+    credentials: true // 表示跨域请求时是否需要使用凭证
+  },
+  proxy: {
+    '/api': {
+      target: 'http://localhost:8089', // 目标接口域名
+      pathRewrite: {
+        '^/api': '/', // 把 /api 替换成 /
+        changeOrigin: true // 表示是否跨域
+      }
+    }
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -67,7 +81,7 @@ export default {
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
   loading: {
-    color: '#ff5316',
+    color: '#409eff',
     height: '4px'
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -88,5 +102,29 @@ export default {
     //   }
     // },
     // cache: false
+  },
+  router: {
+    // extendRoutes(routes, resolve) {
+    //   routes.push({
+    //     name: 'error',
+    //     path: '*',
+    //     component: resolve(__dirname, 'pages/404.vue')
+    //   })
+    // }
+    extendRoutes(routes, resolve) {
+      routes.push(
+        {
+          path: '/',
+          redirect: {
+            name: 'home'
+          }
+        },
+        {
+          name: 'error',
+          path: '*',
+          component: resolve(__dirname, 'layouts/error.vue')
+        }
+      )
+    }
   }
 }

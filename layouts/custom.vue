@@ -1,24 +1,21 @@
 <template>
   <div>
-    <!-- <my-header /> -->
-    <!-- <Carousel /> -->
-    <!-- <b-container fluid>
-     
-    </b-container> -->
+    <my-header />
+    <Jumbotron />
     <Nuxt />
     <my-footer />
   </div>
 </template>
 <script>
-// import MyHeader from '@/components/public/header/index'
+import MyHeader from '@/components/public/header/index'
 import MyFooter from '@/components/public/footer/index'
-// import Carousel from '@/components/Carousel'
+import Jumbotron from '@/components/Jumbotron/index'
 export default {
   name: 'Custom',
   components: {
-    // MyHeader,
-    MyFooter
-    // Carousel
+    MyHeader,
+    MyFooter,
+    Jumbotron
   },
   data() {
     return {
