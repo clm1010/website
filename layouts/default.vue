@@ -1,9 +1,10 @@
 <template>
   <div>
     <my-header />
-    <Carousel />
+    <!-- <Carousel /> -->
+    <CarouselOne />
     <!-- <b-container fluid>
-     
+
     </b-container> -->
     <Nuxt />
     <my-footer />
@@ -12,13 +13,15 @@
 <script>
 import MyHeader from '@/components/public/header/index'
 import MyFooter from '@/components/public/footer/index'
-import Carousel from '@/components/Carousel'
+// import Carousel from '@/components/Carousel'
+import CarouselOne from '@/components/CarouselOne'
 export default {
   name: 'Default',
   components: {
     MyHeader,
     MyFooter,
-    Carousel
+    // Carousel,
+    CarouselOne
   },
   data() {
     return {

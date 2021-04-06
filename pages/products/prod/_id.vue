@@ -5,7 +5,6 @@
       :type-name="productName"
       :content-list="currentProdList"
     ></display-item>
-    <!-- <nuxt-child></nuxt-child> -->
   </b-container>
 </template>
 
