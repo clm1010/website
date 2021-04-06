@@ -1,21 +1,24 @@
 <template>
   <b-container fluid>
-    <swiper
-      :options="swiperOptions"
+    <div
+      v-swiper:mySwiper="swiperOptions"
+      class="swiperWrap"
       @swiper="onSwiper"
       @slideChange="onSlideChange"
     >
-      <!-- <swiper-slide v-for="(item, index) in dataImage" :key="index">
-        <img
-          :src="item.imgUrl"
-          alt=""
-          srcset=""
-          style="max-width: 100%; height: auto;"
-        />
-      </swiper-slide> -->
-      <swiper-slide>1</swiper-slide>
+      <div class="swiper-wrapper">
+        <div
+          class="swiper-slide"
+          v-for="(item, index) in dataImage"
+          :key="index"
+        >
+          <img :src="item.imgUrl" />
+        </div>
+      </div>
       <div class="swiper-pagination"></div>
-    </swiper>
+      <div class="swiper-button-prev swiper-button-white"></div>
+      <div class="swiper-button-next swiper-button-white"></div>
+    </div>
   </b-container>
 </template>
 
@@ -25,16 +28,23 @@ export default {
   data() {
     return {
       swiperOptions: {
-        autoplay: 3000,
+        autoplay: true,
         speed: 1000,
-        // loop: true,
-        // slidesPerView: 'auto',
+        loop: true,
+        slidesPerView: 'auto',
+        mousewheel: true,
         // centeredSlides: true,
         // spaceBetween: 30,
-        // pagination: {
-        //   el: '.swiper-pagination',
-        //   dynamicBullets: true
-        // }
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          // 动态分页器，当你的slide很多时，开启后，分页器小点的数量会部分隐藏。
+          dynamicBullets: true,
+          // 动态分页器的主指示点的数量
+          dynamicMainBullets: 3,
+          // 此参数设置为true时，点击分页器的指示点分页器会控制Swiper切换。
+          clickable: true
+        },
         // on: {
         //   slideChange() {
         //     console.log('onSlideChangeEnd', this)
@@ -43,6 +53,10 @@ export default {
         //     console.log('onTap', this)
         //   }
         // }
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
       },
       dataImage: [
         {

@@ -3,7 +3,6 @@
     <b-tabs pills align="center">
       <b-tab title="物流仓储" active>
         <h3>物流仓储</h3>
-        <p>物流仓储</p>
       </b-tab>
       <b-tab title="物流仓储"><b-card-text>Tab contents 2</b-card-text></b-tab>
       <b-tab title="物流仓储"><b-card-text>Tab contents 2</b-card-text></b-tab>

@@ -3,7 +3,6 @@
     <div class="content">
       <h3>产品中心</h3>
       <p>Products</p>
-      <p></p>
     </div>
   </b-jumbotron>
 </template>
