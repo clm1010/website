@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'Carousel',
+  name: 'CarouselOne',
   data() {
     return {
       swiperOptions: {
@@ -41,7 +41,7 @@ export default {
           // 动态分页器，当你的slide很多时，开启后，分页器小点的数量会部分隐藏。
           dynamicBullets: true,
           // 动态分页器的主指示点的数量
-          dynamicMainBullets: 3,
+          dynamicMainBullets: 2,
           // 此参数设置为true时，点击分页器的指示点分页器会控制Swiper切换。
           clickable: true
         },

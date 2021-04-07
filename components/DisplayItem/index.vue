@@ -9,9 +9,9 @@
         <b-row class="content-list">
           <template v-for="(item, index) in contentList">
             <b-col sm="3" md="3" lg="3" :key="index">
-              {{item.path}}
+              <!-- {{ item.path }} -->
               <!-- <nuxt-link :to="item.path" > -->
-              <nuxt-link :to="{name: 'products-details-id', params:{id: item.path}, query: {key:item}}" >
+              <nuxt-link :to="item.path">
                 <dl>
                   <dt>
                     <img

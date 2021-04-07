@@ -22,11 +22,14 @@ export default {
     const prodList = await app.$axios
       .$get('/json/category.json')
       .then((res) => {
-        console.log(res)
-        return res.data || []
+        if (res.status === 200 && res.code === 0) {
+          return res.data
+        } else {
+          return []
+        }
       })
       .catch((error) => {
-       console.log({error})
+        console.log({ error })
       })
     return {
       prodList
