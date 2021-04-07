@@ -1,7 +1,10 @@
 <template>
-  <div>
-    {{detItem}}
-  </div>
+  <b-container fluid class="product-body">
+    <details-item
+      :type-content="'details'"
+      :details-data="dataItem"
+    ></details-item>
+  </b-container>
 </template>
 
 <script>
@@ -18,9 +21,9 @@ export default {
     // console.log(params)
     // console.log(query)
     if(Object.keys(query) !== 0 && Object.keys(query.key) !== 0) {
-      const detItem = query.key
+      const dataItem = query.key
       return {
-        detItem
+        dataItem
       }
     }
   },

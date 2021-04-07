@@ -97,5 +97,10 @@ export default {
 <style lang="scss" scoped>
 .container-fluid {
   padding: 0;
+  .swiper-slide {
+    img {
+      width: 100%;
+    }
+  }
 }
 </style>
