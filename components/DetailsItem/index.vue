@@ -1,6 +1,10 @@
 <template>
   <b-container fluid class="display-item">
     <b-container fluid="xl">
+      <div class="title">
+        <h3>{{ dataList[0].title }}</h3>
+        <span style="margin-top: 1.25rem;"></span>
+      </div>
       <b-row>
         <b-col sm="12" md="12" lg="6">
           <CarouselTwo
@@ -36,18 +40,37 @@ export default {
     }
   },
   data() {
-    return {
-
-    }
+    return {}
   },
   mounted() {}
 }
 </script>
 
 <style lang="scss" scoped>
- .carouse-height {
-    height: 400px;
+.display-item {
+  padding: 3.75rem 0 7.5rem 0;
+  .title {
+    h3 {
+      line-height: 2.25rem;
+      font-size: 2rem;
+      color: $color-181818;
+      font-weight: bold;
+    }
   }
+  span {
+    height: 0.375rem;
+    width: 7.5rem;
+    -webkit-border-radius: 0.3125rem;
+    -moz-border-radius: 0.3125rem;
+    border-radius: 0.3125rem;
+    background-color: $color-ececec;
+    display: block;
+    margin-bottom: 1.375rem;
+  }
+}
+.carouse-height {
+  height: 400px;
+}
 @media (min-width: 576px) {
   .carouse-height {
     height: 400px;

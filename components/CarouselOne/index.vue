@@ -3,8 +3,8 @@
     <div
       v-swiper:mySwiper="swiperOptions"
       class="swiperWrap"
-      @swiper="onSwiper"
-      @slideChange="onSlideChange"
+      @mouseenter="handleMouseenter"
+      @mouseleave="handleMouseleave"
     >
       <div class="swiper-wrapper">
         <div
@@ -32,9 +32,9 @@ export default {
         speed: 1000,
         loop: true,
         slidesPerView: 'auto',
-        mousewheel: true,
-        // centeredSlides: true,
-        // spaceBetween: 30,
+        grabCursor: true,
+        // mousewheel: true,
+        centeredSlides: true,
         pagination: {
           el: '.swiper-pagination',
           type: 'bullets',
@@ -45,14 +45,6 @@ export default {
           // 此参数设置为true时，点击分页器的指示点分页器会控制Swiper切换。
           clickable: true
         },
-        // on: {
-        //   slideChange() {
-        //     console.log('onSlideChangeEnd', this)
-        //   },
-        //   tap() {
-        //     console.log('onTap', this)
-        //   }
-        // }
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
@@ -84,11 +76,11 @@ export default {
     }
   },
   methods: {
-    onSwiper(swiper) {
-      console.log(swiper)
+    handleMouseenter() {
+      this.mySwiper.autoplay.stop()
     },
-    onSlideChange() {
-      console.log('slide change')
+    handleMouseleave() {
+      this.mySwiper.autoplay.start()
     }
   }
 }

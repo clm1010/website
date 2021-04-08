@@ -1,44 +1,44 @@
 <template>
-    <div style="position: relative;">
-      <div
-        ref="swiperTop"
-        v-swiper:swiperTop="swiperOptionTop"
-        class="gallery-top"
-      >
-        <div class="swiper-wrapper">
-          <div
-            class="swiper-slide"
-            v-for="(item, index) in imageList"
-            :key="index"
-          >
-            <img :src="require(`@/assets/images${item}`)" />
-          </div>
+  <div style="position: relative;">
+    <div
+      ref="swiperTop"
+      v-swiper:swiperTop="swiperOptionTop"
+      class="gallery-top"
+    >
+      <div class="swiper-wrapper">
+        <div
+          class="swiper-slide"
+          v-for="(item, index) in imageList"
+          :key="index"
+        >
+          <img :src="require(`@/assets/images${item}`)" />
         </div>
-        <div
-          class="swiper-button-next swiper-button-white"
-          slot="button-next"
-        ></div>
-        <div
-          class="swiper-button-prev swiper-button-white"
-          slot="button-prev"
-        ></div>
       </div>
       <div
-        ref="swiperThumbs"
-        v-swiper:swiperThumbs="swiperOptionThumbs"
-        class="gallery-thumbs"
-      >
-        <div class="swiper-wrapper">
-          <div
-            class="swiper-slide"
-            v-for="(item, index) in imageList"
-            :key="index"
-          >
-            <img :src="require(`@/assets/images${item}`)" />
-          </div>
+        class="swiper-button-next swiper-button-white"
+        slot="button-next"
+      ></div>
+      <div
+        class="swiper-button-prev swiper-button-white"
+        slot="button-prev"
+      ></div>
+    </div>
+    <div
+      ref="swiperThumbs"
+      v-swiper:swiperThumbs="swiperOptionThumbs"
+      class="gallery-thumbs"
+    >
+      <div class="swiper-wrapper">
+        <div
+          class="swiper-slide"
+          v-for="(item, index) in imageList"
+          :key="index"
+        >
+          <img :src="require(`@/assets/images${item}`)" />
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -58,7 +58,13 @@ export default {
     return {
       swiperOptionTop: {
         grabCursor: true,
-        // spaceBetween: 10,
+        autoplay: true,
+        speed: 1000,
+        // loop: true,
+        spaceBetween: 0,
+        effect: 'coverflow',
+        slidesPerView: 1,
+        centeredSlides: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
@@ -66,11 +72,12 @@ export default {
       },
       swiperOptionThumbs: {
         grabCursor: true,
-        // spaceBetween: 10,
+        spaceBetween: 10,
         centeredSlides: true,
         slidesPerView: 'auto',
         touchRatio: 0.2,
-        slideToClickedSlide: true
+        slideToClickedSlide: true,
+        watchSlidesVisibility: true
       }
     }
   },
@@ -100,7 +107,7 @@ export default {
   border: 1px solid red;
   .swiper-container {
     height: 500px;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.2);
   }
 
   .swiper-slide {
