@@ -31,27 +31,27 @@ export default {
         {
           text: '物流仓储',
           imgUrl: require('@/assets/images/yz-1.jpg'),
-          linkUrl: '/'
+          linkUrl: '/application/1'
         },
         {
           text: '智能制造',
           imgUrl: require('@/assets/images/yz-2.jpg'),
-          linkUrl: '/products'
+          linkUrl: '/application/2'
         },
         {
           text: '医疗',
           imgUrl: require('@/assets/images/yz-3.jpg'),
-          linkUrl: '/'
+          linkUrl: '/application/3'
         },
         {
           text: '公共事业',
           imgUrl: require('@/assets/images/yz-4.jpg'),
-          linkUrl: '/'
+          linkUrl: '/application/4'
         },
         {
           text: '零售',
           imgUrl: require('@/assets/images/yz-5.jpg'),
-          linkUrl: '/'
+          linkUrl: '/application/5'
         }
       ]
     }

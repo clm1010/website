@@ -1,28 +1,28 @@
 <template>
   <b-container fluid class="product-main">
-    <product-category :category="prodList"></product-category>
+    <app-category :category="appList"></app-category>
     <nuxt-child></nuxt-child>
   </b-container>
 </template>
 
 <script>
-import ProductCategory from '@/components/Product/productCategory'
+import AppCategory from '@/components/Application/appCategory'
 export default {
-  name: 'Products',
+  name: 'Application',
   components: {
-    ProductCategory
+    AppCategory
   },
   layout: 'custom',
   async asyncData({ app, store }) {
-    const category = store.state.category.data
+    const category = store.state.appCategory.data
     // console.log(productCategoryList)
     return {
-      prodList: category || []
+      appList: category || []
     }
   },
   data() {
     return {
-      prodList: []
+      appList: []
     }
   }
 }

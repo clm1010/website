@@ -12,33 +12,34 @@
 import { mapState } from 'vuex'
 export default {
   validate({ params }) {
-    console.log(params)
+    // console.log(params)
     if (params.id && params.id !== 'undefined') {
       return true
     }
     return false
   },
-  async asyncData({ app, params }) {
-    const prodList = await app.$axios
-      .$get('/json/category.json')
-      .then((res) => {
-        if (res.status === 200 && res.code === 0) {
-          return res.data
-        } else {
-          return []
-        }
-      })
-      .catch((error) => {
-        console.log({ error })
-      })
-    return {
-      prodList
-    }
-    // console.log()
-  },
+  // async asyncData({ app, params }) {
+  //   const prodList = await app.$axios
+  //     .$get('/json/category.json')
+  //     .then((res) => {
+  //       if (res.status === 200 && res.code === 0) {
+  //         return res.data
+  //       } else {
+  //         return []
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.log({ error })
+  //     })
+  //   return {
+  //     prodList
+  //   }
+  //   // console.log()
+  // },
   data() {
     return {
-      // prodList: []
+      // navList: this.category.category,
+      // prodList: this.categoryList.categoryList
     }
   },
   head() {
@@ -47,35 +48,24 @@ export default {
     }
   },
   computed: {
-    ...mapState('category', {
-      navList: 'productCategoryList'
-    }),
+    ...mapState(['category', 'categoryList']),
     productName() {
-      // console.log(this.$route)
-      const item = this.navList.filter((item) => {
-        return item.type === this.$route.params.id.split('=')[1]
+      const item = this.category.data.filter((item) => {
+        return item.type === this.$route.params.id
       })[0]
       return item ? item.title : ''
     },
     currentProdList() {
-      const resultArr = this.prodList.filter((item) => {
-        return item.type === this.$route.params.id.split('=')[1]
+      const resultArr = this.categoryList.data.filter((item) => {
+        return item.type === this.$route.params.id
       })
       return resultArr
     }
   },
   mounted() {
-    console.log(this.$route.params.id.split('='))
-    // this.getProdList()
+    // console.log(this.$route.params.id.split('='))
   },
-  methods: {
-    // getProdList() {
-    //   this.$axios.$get('/json/category.json').then((res) => {
-    //     console.log(res)
-    //     this.tempList = res.data
-    //   })
-    // }
-  }
+  methods: {}
 }
 </script>
 

@@ -19,61 +19,34 @@
         </b-nav-item-dropdown>
         <b-nav-item-dropdown ref="dropdown" text="产品中心" right>
           <li>
+            <!--    :to="item.path" -->
             <nuxt-link
-              v-for="(item, index) in prodNavList"
+              v-for="(item, index) in category.data"
               :key="index"
               class="dropdown-item"
-              :to="item.path"
+              :to="{
+                name: 'products-prod-id',
+                params: { id: item.type }
+              }"
               >{{ item.title }}</nuxt-link
             >
           </li>
-          <!-- <li>
-            <nuxt-link class="dropdown-item" to="/products/topic/prod1"
-              >移动数据终端</nuxt-link
-            >
-            <nuxt-link class="dropdown-item" to="/products/prodId=2"
-              >固定式扫描器</nuxt-link
-            >
-            <nuxt-link class="dropdown-item" to="/products/prodId=3"
-              >扫码引擎</nuxt-link
-            >
-            <nuxt-link class="dropdown-item" to="/products/prodId=4"
-              >手持扫描枪</nuxt-link
-            >
-            <nuxt-link
-              class="dropdown-item"
-              :to="{ name: 'products', params: { id: 'prodId=1' } }"
-              >移动数据终端</nuxt-link
-            >
-             <nuxt-link class="dropdown-item" to="/products"
-              >移动数据终端</nuxt-link
-            >
-            <nuxt-link class="dropdown-item" to="/products"
-              >固定式扫描器</nuxt-link
-            >
-            <nuxt-link class="dropdown-item" to="/products">扫码引擎</nuxt-link>
-            <nuxt-link class="dropdown-item" to="/products"
-              >手持扫描枪</nuxt-link
-            >
-          </li> -->
         </b-nav-item-dropdown>
         <b-nav-item-dropdown ref="dropdown" text="应用领域" right>
           <li>
-            <nuxt-link class="dropdown-item" to="/application/app1"
-              >物流仓储</nuxt-link
-            >
-            <nuxt-link class="dropdown-item" to="/application/app2"
-              >医疗</nuxt-link
-            >
-            <nuxt-link class="dropdown-item" to="/application/app3"
-              >公共事业</nuxt-link
-            >
-            <nuxt-link class="dropdown-item" to="/application/app4"
-              >零售</nuxt-link
+            <nuxt-link
+              v-for="(item, index) in appCategory.data"
+              :key="index"
+              class="dropdown-item"
+              :to="{
+                name: 'application-id',
+                params: { id: item.type }
+              }"
+              >{{ item.title }}</nuxt-link
             >
           </li>
         </b-nav-item-dropdown>
-        <nuxt-link class="nav-link" to="/">服务与支持</nuxt-link>
+        <nuxt-link class="nav-link" to="/support">服务与支持</nuxt-link>
         <nuxt-link class="nav-link" to="/">联系我们</nuxt-link>
       </b-navbar-nav>
     </b-collapse>
@@ -88,9 +61,7 @@ export default {
     return {}
   },
   computed: {
-    ...mapState('category', {
-      prodNavList: 'productCategoryList'
-    })
+    ...mapState(['category', 'appCategory'])
   },
   mounted() {
     // this.$root.$on('bv::dropdown::show', (bvEvent) => {

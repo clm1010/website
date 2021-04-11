@@ -21,6 +21,7 @@ module.exports = {
     'require-await': 0,
     'dot-notation': 0,
     'no-console': 0,
-    'vue/attributes-order': 0
+    'vue/attributes-order': 0,
+    'vue/v-slot-style': 0
   }
 }

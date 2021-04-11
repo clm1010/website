@@ -1,8 +1,11 @@
 <template>
-  <b-jumbotron text-variant="white">
-    <div class="content">
-      <h3>产品中心</h3>
-      <p>Products</p>
+  <b-jumbotron
+    text-variant="white"
+    :style="showObj && showObj.img ? showObj.img : ''"
+  >
+    <div class="content" v-if="showObj">
+      <h3>{{ showObj.title }}</h3>
+      <p>{{ showObj.desc }}</p>
     </div>
   </b-jumbotron>
 </template>
@@ -13,8 +16,42 @@ export default {
   data() {
     return {}
   },
+  computed: {
+    showObj() {
+      const _tempName = this.$route.name
+      if (_tempName === 'about') {
+        return {
+          title: '公司介绍',
+          img: `background-image:url(${require('@/assets/images/banner1.jpg')})`,
+          desc: 'About Mobydata'
+        }
+      }
+      if (_tempName === 'products-prod-id') {
+        return {
+          title: '产品中心',
+          img: `background-image:url(${require('@/assets/images/banner2.jpg')})`,
+          desc: 'Products'
+        }
+      }
+      if (_tempName === 'application-id') {
+        return {
+          title: '应用领域',
+          img: `background-image:url(${require('@/assets/images/banner3.jpg')})`,
+          desc: 'Application Area'
+        }
+      }
+      if (_tempName === 'support') {
+        return {
+          title: '服务与支持',
+          img: `background-image:url(${require('@/assets/images/banner4.jpg')})`,
+          desc: 'Services and Support'
+        }
+      }
+      return null
+    }
+  },
   mounted() {
-    // console.log(this.$route)
+    console.log(this.$route)
   }
 }
 </script>
@@ -22,7 +59,7 @@ export default {
 <style lang="scss" scoped>
 .jumbotron {
   background-position: center center;
-  background-image: url('@/assets/images/banner1.jpg');
+  // background-image: url('@/assets/images/banner1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 17.5rem;

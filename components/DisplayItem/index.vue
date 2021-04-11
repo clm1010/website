@@ -9,8 +9,11 @@
         <b-row class="content-list">
           <template v-for="(item, index) in contentList">
             <b-col sm="3" md="3" lg="3" :key="index">
-              <!-- {{ item.path }} -->
               <!-- <nuxt-link :to="item.path" > -->
+              <!-- :to="{
+                  name: 'products-details-id',
+                  params: { id: item.id, typeId: item.type }
+                }" -->
               <nuxt-link :to="item.path">
                 <dl>
                   <dt>
@@ -27,7 +30,47 @@
         </b-row>
       </template>
       <template v-else>
-        <div>应用领域</div>
+        <div class="title">
+          <h3>{{ typeName }}</h3>
+          <span style="margin-top: 1.25rem;"></span>
+        </div>
+        <b-row v-if="contentList.length !== 0" class="content-application">
+          <b-col sm="12" md="12" lg="6" xl="6">
+            <b-img
+              :src="require(`@/assets/images${contentList[0].url}`)"
+              fluid
+              :alt="contentList[0].content.title"
+            ></b-img>
+          </b-col>
+          <b-col sm="12" md="12" lg="6" xl="6">
+            <h5 class="mt-0" style="font-weight: 600;">
+              {{ contentList[0].content.title }}
+            </h5>
+            <template v-for="(item, index) in contentList[0].content.desc">
+              <p :key="index">
+                <span>{{ item.k }}.</span> {{ item.v }}
+              </p>
+            </template>
+          </b-col>
+          <!-- <b-media v-if="contentList.length !== 0">
+              <template v-slot:aside>
+                <b-img
+                  :src="require(`@/assets/images${contentList[0].url}`)"
+                  width="600"
+                  alt="placeholder"
+                ></b-img>
+              </template>
+
+              <h5 class="mt-0" style="font-weight: 600;">
+                {{ contentList[0].content.title }}
+              </h5>
+              <template v-for="(item, index) in contentList[0].content.desc">
+                <p :key="index">
+                  <span>{{ item.k }}.</span> {{ item.v }}
+                </p>
+              </template>
+            </b-media> -->
+        </b-row>
       </template>
     </b-container>
   </b-container>
@@ -90,5 +133,8 @@ export default {
       }
     }
   }
+  // .content-application {
+  //   border-bottom: solid 1px #e6e9ea;
+  // }
 }
 </style>

@@ -1,23 +1,22 @@
 <template>
-  <b-container fluid class="product-category">
+  <b-container fluid class="about-category">
     <b-container fluid="xl">
-      <b-row class="product-category-row">
+      <b-row class="about-category-row">
         <b-col
-          class="product-category-col"
+          class="about-category-col"
           sm="6"
           md="6"
-          lg="3"
-          xl="3"
+          lg="2"
+          xl="2"
           v-for="(item, index) in category"
           :key="index"
         >
-          <!--  :to="item.path" -->
           <nuxt-link
             :class="{
               'nav-item--active': item.type == currentType
             }"
             :to="{
-              name: 'products-prod-id',
+              name: 'application-id',
               params: { id: item.type }
             }"
             >{{ item.title }}</nuxt-link
@@ -66,15 +65,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.product-category {
+.about-category {
   width: 100%;
   line-height: 2.5rem;
   padding-top: 0.125rem;
   background-color: $color-f9f9f9;
   border-bottom: solid 1px $color-e6e9ea;
   padding: 0.75rem 0;
-  .product-category-row {
-    .product-category-col {
+  .about-category-row {
+    .about-category-col {
       padding: 0 2rem;
       text-align: center;
     }

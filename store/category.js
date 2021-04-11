@@ -1,6 +1,5 @@
 export const state = () => ({
-  productCategoryList: [
-    // 沸点分类列表
+  data: [
     {
       type: '1',
       title: '移动数据终端',
@@ -25,7 +24,7 @@ export const state = () => ({
 })
 
 export const mutations = {
-  UPDATE_PRODUCT_CATEGORY_LIST(state, payload) {
-    state.productCategoryList = payload
+  CATEGORY(state, payload) {
+    state.data = payload
   }
 }

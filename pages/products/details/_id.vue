@@ -2,7 +2,7 @@
   <b-container fluid class="product-body">
     <details-item
       :type-content="'products-details-id'"
-      :data-list="dataList"
+      :data-object="currentData"
     ></details-item>
   </b-container>
 </template>
@@ -10,7 +10,7 @@
 <script>
 export default {
   validate({ params }) {
-    console.log(params)
+    // console.log(params)
     if (params.id && params.id !== 'undefined') {
       return true
     }
@@ -33,22 +33,27 @@ export default {
     return {
       dataList
     }
-    // if (Object.keys(query) !== 0 && Object.keys(query.key) !== 0) {
-    //   const dataItem = query.key
-    //   return {
-    //     dataItem
-    //   }
-    // } else {
-    //   return {}
-    // }
   },
   data() {
     return {
       dataList: []
     }
   },
+  computed: {
+    currentData() {
+      const tempParams = this.$route.params.id.split('&')
+      const prodId = tempParams[0].split('=')
+      const detId = tempParams[1].split('=')
+      // console.log(prodId)
+      // console.log(detId)
+      const resultData = this.dataList.find((item) => {
+        return item.id === detId[1] && item.prod === prodId[1] ? item : ''
+      })
+      return resultData
+    }
+  },
   mounted() {
-    console.log(this.$route)
+    // console.log(this.currentData)
   }
 }
 </script>
